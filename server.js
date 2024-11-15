@@ -13,7 +13,7 @@ const app = express();
 mongoose.connect(process.env.MONGODB_PATH, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    serverSelectionTimeoutMS: 50000,
+    serverSelectionTimeoutMS: 60000,
   }, () => console.log('MongoDB connected'));
 
 // Middlewares
