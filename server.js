@@ -10,12 +10,22 @@ dotenv.config();
 const app = express();
 
 // MongoDB connection
-mongoose.connect(process.env.MONGODB_PATH, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    serverSelectionTimeoutMS: 30000, // 30 seconds timeout
-    connectTimeoutMS: 30000, // 30 seconds timeout
-}, () => console.log('MongoDB connected'));
+async function connectDB() {
+    try {
+        await mongoose.connect(process.env.MONGODB_PATH, {
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+            serverSelectionTimeoutMS: 30000, 
+            connectTimeoutMS: 30000,
+        });
+        console.log('MongoDB connected');
+    } catch (error) {
+        console.error('MongoDB connection failed:', error);
+        process.exit(1); 
+    }
+}
+
+connectDB();
 
 // Middlewares
 app.use(cors({ origin: process.env.CORS_ORIGIN || 'http://localhost:3000', credentials: true }));
