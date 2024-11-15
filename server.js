@@ -13,8 +13,9 @@ const app = express();
 mongoose.connect(process.env.MONGODB_PATH, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    serverSelectionTimeoutMS: 60000,
-  }, () => console.log('MongoDB connected'));
+    serverSelectionTimeoutMS: 30000, // 30 seconds timeout
+    connectTimeoutMS: 30000, // 30 seconds timeout
+}, () => console.log('MongoDB connected'));
 
 // Middlewares
 app.use(cors({ origin: process.env.CORS_ORIGIN || 'http://localhost:3000', credentials: true }));
