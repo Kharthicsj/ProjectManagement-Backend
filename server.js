@@ -39,7 +39,7 @@ app.use(session({
     resave: false,
     saveUninitialized: false,
     store: MongoStore.create({
-        mongoUrl: 'mongodb+srv://kharthicsj:K4usWgjwA5lR4mh7@projectmanagementsystem.tyurl.mongodb.net/?retryWrites=true&w=majority&appName=ProjectManagementSystem',
+        mongoUrl: 'mongodb+srv://kharthicsj:BN1M1AbEspn0muOV@projectmanagementsystem.tyurl.mongodb.net/ProjectManagementSystem?retryWrites=true&w=majority&appName=ProjectManagementSystem',
         collectionName: 'sessions',
     }),
     cookie: {
