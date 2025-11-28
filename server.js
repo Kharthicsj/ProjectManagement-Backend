@@ -10,7 +10,7 @@ const app = express();
 // MongoDB connection
 async function connectDB() {
     try {
-        await mongoose.connect('mongodb+srv://kharthicsj:K4usWgjwA5lR4mh7@projectmanagementsystem.tyurl.mongodb.net/?retryWrites=true&w=majority&appName=ProjectManagementSystem', {
+        await mongoose.connect('mongodb+srv://kharthicsj:BN1M1AbEspn0muOV@projectmanagementsystem.tyurl.mongodb.net/ProjectManagementSystem?retryWrites=true&w=majority&appName=ProjectManagementSystem', {
             useNewUrlParser: true,
             useUnifiedTopology: true,
             serverSelectionTimeoutMS: 30000,
